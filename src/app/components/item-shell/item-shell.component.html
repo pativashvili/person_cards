@@ -1,0 +1,9 @@
+<div class="users">
+  <app-user-cards
+    *ngFor="let person of persons"
+    [eachPerson]="person"
+  ></app-user-cards>
+</div>
+<div class="box_matrix" *ngFor="let items of secondArray">
+  <app-matrix *ngFor="let item of firstArray"> </app-matrix>
+</div>

@@ -1,0 +1,14 @@
+<div>
+  {{ eachPerson | nameDisplay }}
+  <div
+    class="card_container"
+    [ngStyle]="{ 'background-color': getBackgroundColor() }"
+    appStatusColor
+  >
+    <h5>{{ eachPerson?.firstName }}</h5>
+    <h5>{{ eachPerson?.lastName }}</h5>
+    <h5>{{ eachPerson?.about }} {{ eachPerson?.firstName }}</h5>
+    <h5>{{ eachPerson?.birthDate }}</h5>
+    <h5 class="status">{{ eachPerson?.status }}</h5>
+  </div>
+</div>
