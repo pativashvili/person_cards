@@ -8,7 +8,7 @@
     <h5>{{ eachPerson?.firstName }}</h5>
     <h5>{{ eachPerson?.lastName }}</h5>
     <h5>{{ eachPerson?.about }} {{ eachPerson?.firstName }}</h5>
-    <h5>{{ eachPerson?.birthDate }}</h5>
+    <h5>{{ eachPerson?.birthDate?.getFullYear() }} years old</h5>
     <h5 class="status">{{ eachPerson?.status }}</h5>
   </div>
 </div>

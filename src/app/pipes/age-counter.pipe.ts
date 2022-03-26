@@ -7,11 +7,24 @@ import { Person } from '../models/people-model';
 export class AgeCounterPipe implements PipeTransform {
   transform(person: Person): Person {
     const today = new Date();
-    person.birthDate = new Date(
-      today.getFullYear() - person.birthDate.getFullYear(),
-      today.getDay() - person.birthDate.getDay(),
-      today.getMonth() - person.birthDate.getMonth()
-    );
+    let age: number;
+    let birthday = person.birthDate;
+    if (today.getMonth() > birthday.getMonth()) {
+      birthday.setFullYear(today.getFullYear() - birthday.getFullYear());
+    }
+    if (today.getMonth() < birthday.getMonth()) {
+      birthday.setFullYear(today.getFullYear() - birthday.getFullYear() + 1);
+    }
+    if (today.getMonth() == birthday.getMonth()) {
+      if (today.getDay() > birthday.getDay()) {
+        birthday.setFullYear(today.getFullYear() - birthday.getFullYear());
+      }
+    }
+    if (today.getMonth() == birthday.getMonth()) {
+      if (today.getDay() > birthday.getDay()) {
+        birthday.setFullYear(today.getFullYear() - birthday.getFullYear() + 1);
+      }
+    }
     return person;
   }
 }

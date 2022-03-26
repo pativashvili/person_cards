@@ -1,7 +1,7 @@
 <div class="users">
   <app-user-cards
     *ngFor="let person of persons"
-    [eachPerson]="person"
+    [eachPerson]="person | ageCounter"
   ></app-user-cards>
 </div>
 <div class="box_matrix" *ngFor="let items of secondArray">
