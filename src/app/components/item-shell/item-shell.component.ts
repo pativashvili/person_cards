@@ -9,8 +9,7 @@ import { PeopleService } from 'src/app/people.service';
 })
 export class ItemShellComponent implements OnInit {
   persons: Person[] | undefined;
-  firstArray: any[] = new Array(7);
-  secondArray: any[] = new Array(7);
+  firstArray: any[] = new Array();
   constructor(private peopleService: PeopleService) {}
 
   ngOnInit(): void {

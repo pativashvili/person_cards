@@ -9,6 +9,7 @@ import { StatusColorDirective } from './directives/status-color.directive';
 import { AgeCounterPipe } from './pipes/age-counter.pipe';
 import { NameDisplayPipe } from './pipes/name-display.pipe';
 import { CubeHoveDirective } from './directives/cube-hove.directive';
+import { MatrixArrayPipe } from './pipes/matrix-array.pipe';
 
 @NgModule({
   declarations: [
@@ -19,12 +20,11 @@ import { CubeHoveDirective } from './directives/cube-hove.directive';
     StatusColorDirective,
     AgeCounterPipe,
     NameDisplayPipe,
-    CubeHoveDirective
+    CubeHoveDirective,
+    MatrixArrayPipe,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

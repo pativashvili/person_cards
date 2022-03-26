@@ -1,9 +1,10 @@
+<div class="display_names">users:{{ persons | nameDisplay }}</div>
 <div class="users">
   <app-user-cards
     *ngFor="let person of persons"
     [eachPerson]="person | ageCounter"
   ></app-user-cards>
 </div>
-<div class="box_matrix" *ngFor="let items of secondArray">
+<div class="box_matrix" *ngFor="let items of firstArray | matrixArray: 7">
   <app-matrix *ngFor="let item of firstArray"> </app-matrix>
 </div>

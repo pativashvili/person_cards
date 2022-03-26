@@ -1,26 +1,34 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Person } from 'src/app/models/people-model';
 
+enum Status {
+  Active = 'active',
+  InActive = 'inActive',
+  Deleted = 'deleted',
+}
+enum Colors {
+  Green = 'green',
+  Red = 'red',
+  Blue = 'blue',
+}
 @Component({
   selector: 'app-user-cards',
   templateUrl: './user-cards.component.html',
   styleUrls: ['./user-cards.component.scss'],
 })
 export class UserCardsComponent implements OnInit {
-  @Input() eachPerson!: Person;
+  @Input() eachPerson: Person | undefined;
+
   constructor() {}
 
   ngOnInit(): void {}
-  getBackgroundColor(): string | undefined {
-    if (this.eachPerson?.status == 'active') {
-      return 'green';
+  status_color(status: string | undefined) {
+    if (status == Status.Active) {
+      return Colors.Green;
     }
-    if (this.eachPerson?.status == 'inActive') {
-      return 'blue';
+    if (status == Status.InActive) {
+      return Colors.Blue;
     }
-    if (this.eachPerson?.status == 'deleted') {
-      return 'red';
-    }
-    return 'transparent';
+    return Colors.Red;
   }
 }

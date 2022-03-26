@@ -5,7 +5,7 @@ import { Person } from '../models/people-model';
   name: 'nameDisplay',
 })
 export class NameDisplayPipe implements PipeTransform {
-  transform(person: Person): string {
-    return `Users: ${person.firstName}`;
+  transform(person: Person[] | undefined): string[] | undefined {
+    return person?.map((item) => item.firstName);
   }
 }
